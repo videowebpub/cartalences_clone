@@ -900,18 +900,6 @@ body {
 .cid-qVqwJr8PPA mbr-section-btn {
   color: #ffffff;
 }
-.cid-qTLOIcbxUC {
-  padding-top: 45px;
-  padding-bottom: 30px;
-  background: linear-gradient(90deg, #7252f4, #efd59d);
-}
-.cid-qTLOIcbxUC .mbr-overlay {
-  background: #8264fd;
-  background: linear-gradient(90deg, #8264fd, #5f49b7);
-}
-.cid-qTLOIcbxUC H1 {
-  text-align: center;
-}
 .cid-qRNWvTehN4 .dropdown-item:before {
   font-family: MobiriseIcons !important;
   content: '\e966';
@@ -1238,7 +1226,7 @@ body {
   }
 }
 .cid-qVqz7pN2B5 {
-  padding-top: 15px;
+  padding-top: 75px;
   padding-bottom: 0px;
   background-color: #ffffff;
 }
