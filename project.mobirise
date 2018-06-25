@@ -6,12 +6,12 @@
       "name": "businessm4",
       "title": "Business M4",
       "styling": {
-        "primaryColor": "#eef121",
+        "primaryColor": "#572fe4",
         "secondaryColor": "#f48218",
         "successColor": "#1dc9cb",
         "infoColor": "#08579f",
         "warningColor": "#301886",
-        "dangerColor": "#444444",
+        "dangerColor": "#572fe4",
         "mainFont": "Montserrat",
         "display1Font": "Playfair Display",
         "display1Size": "5",
@@ -25,21 +25,21 @@
         "display4Size": 1,
         "isRoundedButtons": true,
         "isAnimatedOnScroll": true,
-        "isScrollToTopButton": true,
+        "isScrollToTopButton": false,
         "arrowColor": "#188ef4"
       },
       "additionalSetColors": [
+        "#6445e6",
         "#bbb3dc",
         "#f48218",
         "#e99e59",
         "#301886",
         "#ffb168",
-        "#572fe4",
-        "#eef121"
+        "#572fe4"
       ]
     },
     "versionFirst": "4.7.1",
-    "uniqCompNum": 293,
+    "uniqCompNum": 300,
     "versionPublish": "4.7.1",
     "path": "@PROJECT_PATH@",
     "screenshot": "screenshot.png",
@@ -2183,6 +2183,112 @@
       "components": [
         {
           "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradientBg)": {
+                "background": "linear-gradient(0deg, @bg-value, @color2)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-title": {
+              "color": "#444444"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#8d97ad"
+            },
+            ".mbr-text": {
+              "color": "#8d97ad"
+            },
+            ".nav": {
+              "border": "none"
+            },
+            ".nav-tabs": {
+              "width": "100%",
+              ".nav-item": {
+                "margin-bottom": "1rem",
+                "width": "100%"
+              }
+            },
+            ".card-img": {
+              "overflow": "hidden",
+              "border-radius": ".25rem",
+              "box-shadow": "0px 0px 30px rgba(115, 128, 157, 0.3)",
+              "-webkit-box-shadow": "0px 0px 30px rgba(115, 128, 157, 0.3)"
+            },
+            ".nav-tabs .nav-link": {
+              "display": "flex",
+              "color": "contrast(@tabColor)",
+              "box-sizing": "border-box",
+              "font-style": "normal",
+              "background": "@tabColor",
+              "font-weight": "500",
+              "padding": "1rem 1rem",
+              "border-right": "1px solid #dee2e6",
+              "border-top": "1px solid #dee2e6",
+              "border-left": "1px solid #dee2e6",
+              "margin": "0px",
+              "border-radius": "0px !important",
+              "border-bottom": "1px solid #dee2e6",
+              "transition": "all .3s",
+              "&:hover": {
+                "background-color": "@activeTabColor1",
+                "color": "contrast(@activeTabColor1)"
+              },
+              "&.active": {
+                "font-weight": "500",
+                "color": "contrast(@activeTabColor1)",
+                "font-style": "normal",
+                "background": "@activeTabColor1"
+              },
+              "span": {
+                "margin-right": "0.5rem"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".nav-item": {
+                "display": "table-row !important"
+              }
+            },
+            ".mbr-text,.mbr-section-btn": {
+              "color": "#572fe4"
+            },
+            ".title-content": {
+              "color": "#572fe4"
+            },
+            ".mbr-section-title B": {
+              "color": "#301886"
+            }
+          },
+          "_name": "tabs2",
+          "_customHTML": "<section class=\"tabs1\" group=\"Accordion & Toggles & Tabs\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\" plugins=\"mbr-tabs\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"9\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Tabs Titles\" name=\"showTitleTab\" checked>\n        <input type=\"checkbox\" title=\"Show Tabs Images\" name=\"showImages\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"color\" title=\"Tab Color\" name=\"tabColor\" value=\"#301886\">\n        <input type=\"color\" title=\"Active Tab Color\" name=\"activeTabColor1\" value=\"#6445e6\">\n        <select title=\"Tabs Count\" name=\"bootstrapTabs\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n            <option value=\"4\">4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-13-1620x1080.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffb168\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://youtu.be/iM-NestDPNQ\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type=='color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#ffffff\" condition=\"gradientBg && bg.type == 'color'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <h2 class=\"mbr-section-title align-center mbr-fonts-style pb-3\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            <br><b>Contactez-nous</b><br><br></h2>\n         <h3 class=\"mbr-section-subtitle align-center mbr-light mbr-fonts-style pb-3\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\"> \n            Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        </h3>\n        <div class=\"media-container-row\">\n            <div class=\"col-12 col-md-10\">\n                <div class=\"row\">\n                    <div class=\"col-md-4\">\n                        <ul class=\"nav nav-tabs\" role=\"tablist\" data-app-placeholder=\"Type Title\">\n                            <li mbr-buttons mbr-theme-style=\"display-5\" class=\"nav-item\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrLink,-mbrBtnRemove\"><a class=\"nav-link mbr-fonts-style active show\" role=\"tab\" data-toggle=\"tab\" href=\"#tabs2-89_tab0\" aria-selected=\"true\">\n                                    info@cartalences.ca</a></li>\n                            <li mbr-buttons mbr-theme-style=\"display-5\" class=\"nav-item\" mbr-if=\"bootstrapTabs > 1\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrBtnRemove\"><a class=\"nav-link mbr-fonts-style active show\" role=\"tab\" data-toggle=\"tab\" href=\"tel:514-781-9613\" aria-selected=\"true\">&nbsp;(514) 781-9613</a></li>\n                            <li mbr-buttons mbr-theme-style=\"display-5\" class=\"nav-item\" mbr-if=\"bootstrapTabs > 2\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrLink,-mbrBtnRemove\"><a class=\"nav-link mbr-fonts-style active show\" role=\"tab\" data-toggle=\"tab\" href=\"#tabs2-89_tab2\" aria-selected=\"true\">\n                                    www.cartalences.ca</a></li>\n                            <li mbr-buttons mbr-theme-style=\"display-7\" class=\"nav-item\" mbr-if=\"bootstrapTabs > 3\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove,-mbrLink,-mbrBtnRemove\">\n                                <a class=\"nav-link mbr-fonts-style active\" role=\"tab\" data-toggle=\"tab\" href=\"#tab4\" aria-expanded=\"true\">\n                                    Tab 4\n                                </a>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"col-md-8\">\n                        <div class=\"tab-content\">\n                            <div id=\"tab1\" class=\"tab-pane in active\" role=\"tabpanel\">\n                                <div class=\"row\">\n                                    <div class=\"col-lg-12 pb-3\" mbr-if=\"showImages\">\n                                        <div class=\"card-img\"><img src=\"@PROJECT_PATH@/assets/images/carta-7-1174x660.png\" alt title></div>\n                                    </div>\n                                    <div class=\"col-lg-12\">\n                                        <h4 class=\" display-2 align-left title-content pb-2 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitleTab\" data-app-selector=\".title-content\">&nbsp;<b>Nos services sont offerts :</b></h4>\n                                        <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text,.mbr-section-btn\"><b>- À vos bureaux<br>- À nos bureaux. Communiquez avec nous pour l’emplacement le plus &nbsp; près &nbsp; de vous.<br>- Par vidéoconférence via Zoom<br>- Via Skype : sandra.dumais5</b></p>\n                                        <div class=\"mbr-section-btn pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n                                            <a class=\"btn-underline mr-3\" href=\"https://mobirise.com\">Read More</a>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div id=\"tab2\" class=\"tab-pane\" role=\"tabpanel\">\n                                <div class=\"row\">\n                                    <div class=\"col-lg-12 pb-3\" mbr-if=\"showImages\">\n                                        <div class=\"card-img\"><img src=\"../_images/img/01.jpg\" alt></div>\n                                    </div>\n                                   <div class=\"col-lg-12\">\n                                           <h4 class=\" display-2 align-left title-content pb-2 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitleTab\" data-app-selector=\".title-content\"> \n                                                         Lorem ipsum dolor sit amet\n                                                         </h4>\n                                        <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">\n                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem laudantium in adipisci ipsa optio quas id excepturi non, eos cupiditate, necessitatibus sapiente illo error. Vero adipisci quidem aut itaque labore.\n                                        </p>\n                                         <div class=\"mbr-section-btn pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n                                            <a class=\"btn-underline mr-3\" href=\"https://mobirise.com\">Read More</a>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div id=\"tab3\" class=\"tab-pane\" role=\"tabpanel\">\n                                <div class=\"row\">\n                                    <div class=\"col-lg-12 pb-3\" mbr-if=\"showImages\">\n                                        <div class=\"card-img\"><img src=\"@PROJECT_PATH@/assets/images/carta-7-1174x660.png\" alt title></div>\n                                    </div>\n                                    <div class=\"col-lg-12\">\n                                        <h4 class=\" display-2 align-left title-content pb-2 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitleTab\" data-app-selector=\".title-content\"><b>Nos services sont offerts :</b></h4>\n                                        <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text,.mbr-section-btn\">- À vos bureaux<br>- À nos bureaux. Communiquez avec nous pour l’emplacement le plus près de vous.<br>- Par vidéoconférence via Zoom<br>- Via Skype : sandra.dumais5</p>\n                                        <div class=\"mbr-section-btn pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn-underline mr-3\" href=\"https://mobirise.com\">Read More</a></div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div id=\"tab4\" class=\"tab-pane\" role=\"tabpanel\">\n                                <div class=\"row\">\n                                    <div class=\"col-lg-12 pb-3\" mbr-if=\"showImages\">\n                                        <div class=\"card-img\"><img src=\"../_images/img/05.jpg\" alt></div>\n                                    </div>\n                                    <div class=\"col-lg-12\">\n                                        <h4 class=\" display-2 align-left title-content pb-2 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitleTab\" data-app-selector=\".title-content\"> \n                                            Lorem ipsum dolor sit amet\n                                        </h4>\n                                        <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text,.mbr-section-btn\">\n                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem laudantium in adipisci ipsa optio quas id excepturi non, eos cupiditate, necessitatibus sapiente illo error. Vero adipisci quidem aut itaque labore.\n                                        </p>\n                                        <div class=\"mbr-section-btn pb-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\">\n                                            <a class=\"btn-underline mr-3\" href=\"https://mobirise.com\">Read More</a>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "qVWJAoKzzF",
+          "_anchor": "tabs2-89",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor"
+          },
+          "_name": "content2",
+          "_customHTML": "<section class=\"mbr-section content8\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n        <input type=\"color\" title=\"Backgroud Color\" name=\"bgColor\" value=\"#ffb168\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row title\">\n            <div class=\"col-md-10 col-lg-8\">\n                <div class=\"mbr-section-btn align-center\" mbr-buttons mbr-theme-style=\"display-5\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-md btn-danger\" href=\"mailto:info@cartalences.ca\">Nous écrire ici</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "qVWO0DZhG1",
+          "_anchor": "content2-8b",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
             ".dropdown-item:before": {
               "font-family": "MobiriseIcons !important",
               "content": "'\\e966'",
@@ -2550,50 +2656,6 @@
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
             "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".mbr-section-title": {
-              "margin": "0",
-              "text-align": "center"
-            },
-            ".mbr-section-subtitle,.mbr-text": {
-              "color": "#8d97ad"
-            },
-            ".row-item": {
-              "padding-bottom": "2rem"
-            },
-            "@media (max-width: 767px)": {
-              ".card-img,.mbr-text,.mbr-card-title, .mbr-section-subtitle,.mbr-section-title, .underline, .mbr-section-btn": {
-                "text-align": "center !important"
-              }
-            },
-            ".mbr-section-subtitle": {
-              "color": "#ffffff"
-            },
-            ".mbr-text, .mbr-section-btn": {
-              "color": "#f48218"
-            },
-            ".mbr-card-title,.card-img": {
-              "color": "#f48218"
-            }
-          },
-          "_name": "features14",
-          "_customHTML": "<section group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\" class=\"features14\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"9\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Section Title\" name=\"showSectionTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Content Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <select title=\"Cards\" name=\"cardsAmount\">\n            <option value=\"1\" selected>1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n        </select>\n\n        <select title=\"Cards Align\" name=\"cardsAlign\">\n            <option value=\"left\">left</option>\n            <option value=\"center\" selected>center</option>\n            <option value=\"right\">right</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/cartalences-cell-sandra-1920x1080.png\" selected parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://youtu.be/iM-NestDPNQ\">\n        </fieldset>\n        <!-- <input type> -->\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <h2 class=\"mbr-fonts-style mbr-section-title align-left mbr-white\" mbr-theme-style=\"display-2\" mbr-if=\"showSectionTitle\" data-app-selector=\".mbr-section-title\"><br><br><br><b><br></b><br><br></h2>\n\n        <h3 class=\"mbr-fonts-style mbr-section-subtitle align-left mbr-light pt-3\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\"><b>&nbsp;</b><br>B.Éd DIFP DESS<div>Carriérologue - Recruteure - Formatrice Conceptrice - Coach Nova</div><br><br><br><div><b><br></b></div><br><div><b><br></b></div></h3>\n\n        <div class=\"row pt-5\" mbr-class=\"{'justify-content-start':cardsAlign=='left',\n                         'justify-content-center':cardsAlign=='center',\n                         'justify-content-end':cardsAlign=='right'}\">\n            <div class=\"col-md-6 row-item col-lg-3\">\n                <h4 class=\"mbr-fonts-style mbr-card-title align-left pb-2 mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-card-title,.card-img\">info@cartalences.ca</h4>\n                <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">(514) 781-9613<br>www.cartalences.ca<br></p>\n                <div mbr-buttons mbr-theme-style=\"display-5\" class=\"mbr-section-btn align-left \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn-underline text-secondary\" href=\"mailto:info@cartalences.ca\">Nous écrire ici</a></div>\n            </div>\n\n            <div class=\"col-md-6 row-item col-lg-3\" mbr-if=\"cardsAmount > 1\">\n                <h4 class=\"mbr-fonts-style mbr-card-title align-left pb-2 mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-card-title,.card-img\">(514) 781-9613<div><br></div></h4>\n\n                <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-left \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn-underline\" href=\"https://mobirise.com\">More Info</a>\n                </div>\n            </div>\n\n            <div class=\"col-md-6 row-item col-lg-3\" mbr-if=\"cardsAmount > 2\">\n                <h4 class=\"mbr-fonts-style mbr-card-title align-left pb-2 mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-card-title,.card-img\">www.cartalences.ca</h4>\n                <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-left \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn-underline\" href=\"https://mobirise.com\">More Info</a>\n                </div>\n            </div>\n\n            <div class=\"col-md-6 row-item col-lg-3\" mbr-if=\"cardsAmount > 3\">\n                <h4 class=\"mbr-fonts-style mbr-card-title align-left pb-2 mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-card-title,.card-img\">Competitor analysis</h4>\n                <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Lorem ipsum dolor amet, consecte tempor incididunt ut labore et dolore tumber tur adipisicing elit.</p>\n                <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn align-left \" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                    <a class=\"btn-underline\" href=\"https://mobirise.com\">More Info</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "qU8l6iLKfH",
-          "_anchor": "features14-6i",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
               "background-color": "@bg-value",
               "& when (@gradientBg)": {
                 "background": "linear-gradient(90deg, @bg-value, @bgColor2)"
@@ -2616,7 +2678,7 @@
             }
           },
           "_name": "info1",
-          "_customHTML": "<section class=\"mbr-section info1\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1440x1080.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=m9bJY1DhWZE&list=PLg0JYCN-dTmt869nwyrXFJ2zFck67HQYT&index=66\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"checkbox\" title=\"Gradient Overlay\" name=\"gradientOverlay\" checked condition=\"bg.type!='color'&&overlay\">\n        <input type=\"color\" title=\"Color 2\" name=\"overlayColor2\" value=\"#e7801e\" condition=\"gradientOverlay&&overlay\">\n        <input type=\"checkbox\" title=\"Gradient Background\" name=\"gradientBg\" checked condition=\"bg.type=='color'\">\n        <input type=\"color\" title=\"Color 2\" name=\"bgColor2\" value=\"#e7801e\" condition=\"bg.type=='color' && gradientBg\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity}\">\n    </div>\n\n    <div class=\"container-fluid\">\n        <div class=\"media-container-row\">\n            <div class=\"title col-12 col-md-8\">\n                <h2 mbr-if=\"showTitle\" class=\"align-center mbr-bold mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\">Articles et opportunités d'emploi<br><br></h2>\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">Suivez Cartalences sur les réseaux sociaux</h3>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove\"><a class=\"btn btn-info\" href=\"https://www.facebook.com/cartalences.ca/\" target=\"_blank\"><span class=\"icon54-v1-facebook-1 mbr-iconfont mbr-iconfont-btn\" style=\"font-size: 18px;\"></span>Facebook</a>\n                    <a class=\"btn btn-warning\" href=\"https://www.linkedin.com/in/sandra-dumais-b-%C3%A9d-difp-dess-29a781a5/\" target=\"_blank\"><span class=\"sli-social-linkedin mbr-iconfont mbr-iconfont-btn\" style=\"font-size: 18px;\"></span>Linkedin</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section info1\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"3\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/mbr-1440x1080.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#572fe4\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=m9bJY1DhWZE&list=PLg0JYCN-dTmt869nwyrXFJ2zFck67HQYT&index=66\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"checkbox\" title=\"Gradient Overlay\" name=\"gradientOverlay\" checked condition=\"bg.type!='color'&&overlay\">\n        <input type=\"color\" title=\"Color 2\" name=\"overlayColor2\" value=\"#ffffff\" condition=\"gradientOverlay&&overlay\">\n        <input type=\"checkbox\" title=\"Gradient Background\" name=\"gradientBg\" checked condition=\"bg.type=='color'\">\n        <input type=\"color\" title=\"Color 2\" name=\"bgColor2\" value=\"#ffffff\" condition=\"bg.type=='color' && gradientBg\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity}\">\n    </div>\n\n    <div class=\"container-fluid\">\n        <div class=\"media-container-row\">\n            <div class=\"title col-12 col-md-8\">\n                <h2 mbr-if=\"showTitle\" class=\"align-center mbr-bold mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\">Articles et opportunités d'emploi<br><br></h2>\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">Suivez Cartalences sur les réseaux sociaux</h3>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-7\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove\"><a class=\"btn btn-info\" href=\"https://www.facebook.com/cartalences.ca/\" target=\"_blank\"><span class=\"icon54-v1-facebook-1 mbr-iconfont mbr-iconfont-btn\" style=\"font-size: 18px;\"></span>Facebook</a>\n                    <a class=\"btn btn-warning\" href=\"https://www.linkedin.com/in/sandra-dumais-b-%C3%A9d-difp-dess-29a781a5/\" target=\"_blank\"><span class=\"sli-social-linkedin mbr-iconfont mbr-iconfont-btn\" style=\"font-size: 18px;\"></span>Linkedin</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_anchor": "info1-7v",
           "_isUserblock": true,
           "_cid": "qVqOo58CKN",
