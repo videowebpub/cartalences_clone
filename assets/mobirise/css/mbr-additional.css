@@ -943,6 +943,9 @@ body {
     margin-bottom: 5rem;
   }
 }
+.cid-qVzvtRGImN .mbr-card-title {
+  color: #301886;
+}
 .cid-qVzufA4PJI {
   padding-top: 105px;
   padding-bottom: 75px;
@@ -1717,6 +1720,7 @@ body {
 .cid-qVX18OdhKe .mbr-text,
 .cid-qVX18OdhKe .mbr-section-btn {
   color: #301886;
+  text-align: left;
 }
 .cid-qVWO0DZhG1 {
   padding-top: 15px;
