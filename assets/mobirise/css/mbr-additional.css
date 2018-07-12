@@ -897,115 +897,26 @@ body {
 }
 .cid-qVqwJr8PPA .mbr-section-subtitle,
 .cid-qVqwJr8PPA mbr-section-btn {
-  color: #301886;
+  color: #402b8e;
 }
-.cid-qXgwCfcdla {
-  padding-top: 75px;
-  padding-bottom: 15px;
-  background-color: #ffffff;
+.cid-qVqwJr8PPA .mbr-section-subtitle,
+.cid-qVqwJr8PPA mbr-section-btn B {
+  color: #402b8e;
 }
-.cid-qXgwCfcdla .mbr-section-subtitle {
-  color: #301886;
-  text-align: center;
+.cid-qXxZMTHNGg {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #402b8e;
+  background: linear-gradient(90deg, #402b8e, #ffffff);
 }
-.cid-qXgwCfcdla .mbr-section-title DIV {
-  text-align: center;
-  color: #ffffff;
-}
-.cid-qXgwCfcdla .mbr-section-title {
-  text-align: center;
-  color: #000000;
-}
-.cid-qXgwCfcdla .mbr-section-title B {
-  color: #000000;
-}
-.cid-qXgvLzUg7N {
-  padding-top: 45px;
-  padding-bottom: 15px;
-  background-image: url("../../../assets/images/gens-qui-applaudient-1627x1072.jpg");
-}
-.cid-qXgvLzUg7N .mbr-text {
-  color: #ffffff;
-  text-align: left;
-}
-.cid-qXgvLzUg7N h4 {
-  text-align: center;
-}
-.cid-qXgvLzUg7N p {
-  text-align: center;
-}
-.cid-qXgvLzUg7N .card .card-img {
-  display: flex;
-  justify-content: center;
-}
-.cid-qXgvLzUg7N .card:hover .step {
-  color: #ffffff;
-  border: 0px solid transparent;
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
-}
-.cid-qXgvLzUg7N .card:hover .step:before {
-  transform: scale(1);
-}
-.cid-qXgvLzUg7N .step {
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  width: 100px;
-  height: 100px;
-  border: 2px solid #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: all .3s;
-}
-.cid-qXgvLzUg7N .step:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform: scale(0);
-  transition-duration: 0.3s;
-  background: linear-gradient(45deg, #f48218, #e12424);
-  border-radius: 50%;
-}
-.cid-qXgvLzUg7N .underline {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-.cid-qXgvLzUg7N .underline .line {
-  width: 5rem;
-  height: 3px;
-  background: linear-gradient(90deg, #ffffff, #188ef4);
-  display: inline-block;
-}
-@media (min-width: 768px) {
-  .cid-qXgvLzUg7N .mbr-section-title,
-  .cid-qXgvLzUg7N .underline {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-.cid-qXgvLzUg7N .card-title,
-.cid-qXgvLzUg7N .card-img {
-  text-align: left;
-  color: #ffffff;
-}
-.cid-qXgvLzUg7N .mbr-section-title,
-.cid-qXgvLzUg7N .underline {
-  color: #ffffff;
-}
-.cid-qXgxoDWACN {
-  padding-top: 15px;
-  padding-bottom: 90px;
-  background-color: #ffffff;
+.cid-qXxZMTHNGg .mbr-overlay {
+  background-color: #5a31fb;
+  background: linear-gradient(90deg, #5a31fb, #000000);
 }
 .cid-qXgrjFVkqB {
-  padding-top: 45px;
-  padding-bottom: 15px;
-  background-color: #e98c40;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  background-color: #402b8e;
 }
 .cid-qXgrjFVkqB .mbr-section-subtitle {
   color: #ffffff;
@@ -1017,10 +928,10 @@ body {
 }
 .cid-qXgrjFVkqB .mbr-section-title {
   text-align: center;
-  color: #000000;
+  color: #ffffff;
 }
 .cid-qXgrjFVkqB .mbr-section-title B {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-qXggeFXP5j {
   padding-top: 45px;
@@ -1109,7 +1020,120 @@ body {
 }
 .cid-qXgjRCBZqZ {
   padding-top: 30px;
-  padding-bottom: 105px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+.cid-qXy3uKgVT9 {
+  padding-top: 60px;
+  padding-bottom: 0px;
+  background-color: #402b8e;
+  background: linear-gradient(90deg, #402b8e, #ffffff);
+}
+.cid-qXy3uKgVT9 .mbr-overlay {
+  background-color: #5a31fb;
+  background: linear-gradient(90deg, #5a31fb, #000000);
+}
+.cid-qXgwCfcdla {
+  padding-top: 15px;
+  padding-bottom: 0px;
+  background-color: #402b8e;
+}
+.cid-qXgwCfcdla .mbr-section-subtitle {
+  color: #301886;
+  text-align: center;
+}
+.cid-qXgwCfcdla .mbr-section-title DIV {
+  text-align: center;
+  color: #ffffff;
+}
+.cid-qXgwCfcdla .mbr-section-title {
+  text-align: center;
+  color: #ffffff;
+}
+.cid-qXgwCfcdla .mbr-section-title B {
+  color: #ffffff;
+}
+.cid-qXgvLzUg7N {
+  padding-top: 105px;
+  padding-bottom: 90px;
+  background-image: url("../../../assets/images/gens-qui-applaudient-1627x1072.jpg");
+}
+.cid-qXgvLzUg7N .mbr-text {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-qXgvLzUg7N h4 {
+  text-align: center;
+}
+.cid-qXgvLzUg7N p {
+  text-align: center;
+}
+.cid-qXgvLzUg7N .card .card-img {
+  display: flex;
+  justify-content: center;
+}
+.cid-qXgvLzUg7N .card:hover .step {
+  color: #ffffff;
+  border: 0px solid transparent;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+}
+.cid-qXgvLzUg7N .card:hover .step:before {
+  transform: scale(1);
+}
+.cid-qXgvLzUg7N .step {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  width: 100px;
+  height: 100px;
+  border: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all .3s;
+}
+.cid-qXgvLzUg7N .step:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition-duration: 0.3s;
+  background: linear-gradient(45deg, #f48218, #e12424);
+  border-radius: 50%;
+}
+.cid-qXgvLzUg7N .underline {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.cid-qXgvLzUg7N .underline .line {
+  width: 5rem;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #188ef4);
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .cid-qXgvLzUg7N .mbr-section-title,
+  .cid-qXgvLzUg7N .underline {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+.cid-qXgvLzUg7N .card-title,
+.cid-qXgvLzUg7N .card-img {
+  text-align: left;
+  color: #ffffff;
+}
+.cid-qXgvLzUg7N .mbr-section-title,
+.cid-qXgvLzUg7N .underline {
+  color: #ffffff;
+}
+.cid-qXgxoDWACN {
+  padding-top: 30px;
+  padding-bottom: 60px;
   background-color: #ffffff;
 }
 .cid-qRNWvTehN4 .dropdown-item:before {
@@ -1395,6 +1419,7 @@ body {
 }
 .cid-qRNWvTehN4 .navbar-dropdown {
   padding: .5rem 1rem;
+  position: fixed;
 }
 .cid-qRNWvTehN4 a.nav-link {
   justify-content: center;
@@ -1434,6 +1459,16 @@ body {
     max-width: calc(100% + 2rem);
     left: -1rem;
   }
+}
+.cid-qXy1xI8rQi {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ffffff;
+  background: linear-gradient(90deg, #ffffff, #301886);
+}
+.cid-qXy1xI8rQi .mbr-overlay {
+  background-color: #5a31fb;
+  background: linear-gradient(90deg, #5a31fb, #000000);
 }
 .cid-qX5akpNzRK {
   padding-top: 90px;
@@ -1649,8 +1684,8 @@ body {
 }
 .cid-qVX7TqlLCz {
   padding-top: 75px;
-  padding-bottom: 75px;
-  background-color: #cccccc;
+  padding-bottom: 30px;
+  background-color: #efefef;
 }
 @media (max-width: 767px) {
   .cid-qVX7TqlLCz .content {
@@ -2035,6 +2070,7 @@ body {
 }
 .cid-qRNWvTehN4 .navbar-dropdown {
   padding: .5rem 1rem;
+  position: fixed;
 }
 .cid-qRNWvTehN4 a.nav-link {
   justify-content: center;
@@ -2358,6 +2394,7 @@ body {
 }
 .cid-qRNWvTehN4 .navbar-dropdown {
   padding: .5rem 1rem;
+  position: fixed;
 }
 .cid-qRNWvTehN4 a.nav-link {
   justify-content: center;
@@ -2910,7 +2947,7 @@ body {
 .cid-qVX9fAlnRH {
   padding-top: 45px;
   padding-bottom: 45px;
-  background-color: #cccccc;
+  background-color: #efefef;
 }
 @media (max-width: 767px) {
   .cid-qVX9fAlnRH .content {
@@ -3295,6 +3332,7 @@ body {
 }
 .cid-qRNWvTehN4 .navbar-dropdown {
   padding: .5rem 1rem;
+  position: fixed;
 }
 .cid-qRNWvTehN4 a.nav-link {
   justify-content: center;
@@ -3338,7 +3376,7 @@ body {
 .cid-qWmYXVbkkF {
   padding-top: 0px;
   padding-bottom: 75px;
-  background-image: url("../../../assets/images/gens-qui-applaudient-1627x10722.jpg");
+  background-image: url("../../../assets/images/gens-qui-applaudient-1627x10725.jpg");
 }
 .cid-qWmYXVbkkF .mbr-overlay {
   background: #000000;
@@ -3602,7 +3640,7 @@ body {
 .cid-qWvFwDiZbY {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #cccccc;
+  background-color: #efefef;
 }
 @media (max-width: 767px) {
   .cid-qWvFwDiZbY .content {
@@ -3760,6 +3798,9 @@ body {
 .cid-qVX18OdhKe .mbr-section-btn {
   color: #301886;
   text-align: left;
+}
+.cid-qVX18OdhKe .card-title B {
+  color: #301886;
 }
 .cid-qVWO0DZhG1 {
   padding-top: 15px;
@@ -4049,6 +4090,7 @@ body {
 }
 .cid-qRNWvTehN4 .navbar-dropdown {
   padding: .5rem 1rem;
+  position: fixed;
 }
 .cid-qRNWvTehN4 a.nav-link {
   justify-content: center;
@@ -4192,5 +4234,8 @@ body {
   color: #301886;
 }
 .cid-qVzLmPGhg8 SPAN {
+  color: #301886;
+}
+.cid-qVzLmPGhg8 B {
   color: #301886;
 }
